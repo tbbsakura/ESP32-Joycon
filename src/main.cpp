@@ -79,6 +79,7 @@ void recv_callback_0x3f_vmtosc(uint8_t *p_msg)
 
   VMTOSC::SendVmtTriggerOsc( 0, (btn2 & 0x40) ? 1.0 : 0.0 ); // L or R
   VMTOSC::SendVmtTriggerOsc( 1, (btn2 & 0x80) ? 1.0 : 0.0 ); // ZL or ZR
+  VMTOSC::SendVmtTriggerOsc( 2, (btn2 & 0x80) ? 0.5 : 0.0 ); // ZL or ZR Grip Force for VRChat
   VMTOSC::SendVmtStickClickOsc(btn2 & (0x04 | 0x08)); // Left or Right stick clicked
 
   const int8_t stickPosToX[] = {1,1,0,-1,-1,-1,0,1,0};
