@@ -1,4 +1,4 @@
-# ESP32 as a JoyCon's host
+# ESP32-Joycon : ESP32 as a JoyCon's host
 ESP32がBluetoothのホストとなってJoyConからボタン等の情報を取得できるプログラムです。
 取得した内容に基づいて処理を分岐したり、取得した情報をWiFiでPC等に送ったりできます。
 PCにJoyConを接続すると毎回ペアリングからで面倒なので、PCに転送するだけでも便利な場合もあるかと思います。
