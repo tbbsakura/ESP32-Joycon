@@ -1,9 +1,9 @@
 # ESP32 as a JoyCon's host
-Control your ESP32 projects with a JoyCon controller! 
-
 ESP32がBluetoothのホストとなってJoyConからボタン等の情報を取得できるプログラムです。
 取得した内容に基づいて処理を分岐したり、取得した情報をWiFiでPC等に送ったりできます。
 PCにJoyConを接続すると毎回ペアリングからで面倒なので、PCに転送するだけでも便利な場合もあるかと思います。
+
+(JoyConへ Subcommand を送る機能はまだ不安定ですが、JoyCon から情報を取得する方は安定しています。)
 
 ## サンプルプログラム
 サンプルとして OSCで VRChat、あるいはVMT(Virtual Motion Tracker)が動いているPCにスティックやボタンの情報を送信して操作できるプログラム(src/main.cpp)をつけてあります。
