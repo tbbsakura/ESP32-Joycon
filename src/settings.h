@@ -4,22 +4,22 @@
 // 1. 必須：右手の場合はコメント、左手ならコメント解除。
 #define LEFT_HAND
 
-// 2. 必須：JoyCons' Bluetooth device addresses
+// 2. 必須・要更新：JoyCons' Bluetooth device addresses
 #ifdef LEFT_HAND
-#define TARGET_BT_ADDR  { 0x90, 0x45, 0x28, 0x7c, 0xe7, 0xf8 } // 左手JoyCon のBluetoothアドレス
+#define TARGET_BT_ADDR  { 0x90, 0x45, 0x28, 0x7c, 0xXX, 0xXX } // 左手JoyCon のBluetoothアドレス
 #else
-#define TARGET_BT_ADDR  { 0x90, 0x45, 0x28, 0x7d, 0x02, 0xf5 } // 右手JoyCon のBluetoothアドレス
+#define TARGET_BT_ADDR  { 0x90, 0x45, 0x28, 0x7d, 0xXX, 0xXX } // 右手JoyCon のBluetoothアドレス
 #endif
 
-// 3-1.
-// 使う場合は必須： 使う方どちらか一方だけをコメント解除してください。
+// 3-1. VRChatにOSC Inputを送信 / VMT に OSCを送信
+// 使う場合は必須： VRC_OSCかVMT_OSC、使う方どちらか一方だけをコメント解除してください。
 // 両方コメントでもシリアルに押されたボタン等を出力するサンプルとして使えます。
 //#define SEND_VRC_OSC // VRChat の OSC Inputを送信する。
-#define SEND_VMT_OSC  // VMTの Index互換コントローラーinputをOSC送信する。
+//#define SEND_VMT_OSC // VMTの Index互換コントローラーinputをOSC送信する。
 
 // 3-2. 使う場合は必須： OSC送信先IPアドレスを指定してください。
-#define VRC_OSC_IPADDR "192.168.1.125"
-#define VMT_OSC_IPADDR "192.168.1.125"
+#define VRC_OSC_IPADDR "192.168.1.125" // VRChat が動作するPCのIPアドレス
+#define VMT_OSC_IPADDR "192.168.1.125" // VMT が動作するPCのIPアドレス
 
 //////////////////////////////////////////////////////////////////////
 // 以下は通常変更する必要はありません
