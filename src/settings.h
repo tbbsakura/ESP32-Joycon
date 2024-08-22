@@ -18,8 +18,8 @@
 //#define SEND_VMT_OSC // VMTの Index互換コントローラーinputをOSC送信する。
 
 // 3-2. 使う場合は必須： OSC送信先IPアドレスを指定してください。
-#define VRC_OSC_IPADDR "192.168.1.125" // VRChat が動作するPCのIPアドレス
-#define VMT_OSC_IPADDR "192.168.1.125" // VMT が動作するPCのIPアドレス
+#define VRC_OSC_IPADDR "192.168.1.xxx" // VRChat が動作するPCのIPアドレス
+#define VMT_OSC_IPADDR "192.168.1.xxx" // VMT が動作するPCのIPアドレス
 
 //////////////////////////////////////////////////////////////////////
 // 以下は通常変更する必要はありません
