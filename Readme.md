@@ -6,9 +6,9 @@ PCにJoyConを接続すると毎回ペアリングからで面倒なので、PC�
 (JoyConへ Subcommand を送る機能はまだ不安定ですが、JoyCon から情報を取得する方は安定しています。)
 
 ## サンプルプログラム
-サンプルとして OSCで VRChat、あるいはVMT(Virtual Motion Tracker)が動いているPCにスティックやボタンの情報を送信して操作できるプログラム(src/main.cpp)をつけてあります。(両手やりたい場合はESP32が2つ必要です)
+サンプルとして OSCで VRChat、あるいはVMT(Virtual Motion Tracker)が動いているPCにスティックやボタンの情報を送信して操作できるプログラム(src/main.cpp)をつけてあります。(両手やりたい場合はESP32Devkit等が2つ必要です)
 VSCode の PlatformIO で Arduino ベースで書いていますので、src/settings.h の内容を編集して使ってください。
-ライブラリは platformio.ini の lib_depsに書いてあるものが必要です。
+ライブラリは platformio.ini の lib_depsに書いてあるものが必要です(自動的にダウンロードされるはずですが)。
 
 サンプルは WiFiManager を使っているので、WiFi接続用のSSID/Passが保存されていないESP32の場合は、ESP32が自らアクセスポイントになります。src/settings.h で設定してある一時的なSSIDとPASSで接続できますので、スマホで接続して家のWiFiに繋ぐための設定してください。
 
@@ -26,6 +26,11 @@ PCにいったん接続して、デバイスマネージャーでBluetoothグル
 `#define TARGET_BT_ADDR  { 0x10, 0x20, 0x30, 0x40, 0xAA, 0xBB } // 左手JoyCon のBluetoothアドレス`
 
 スマホのBluetoothスキャナアプリ(Bluetooth Classic対応のもの)などでも調べられます。(10:20:30:40:AA:BB のようにコロンで区切られている場合も多いです。)
+
+## VMT利用時の不具合と対策
+1. VMTにenabledを送ることで自動的に仮想デバイスを認識する仕様のですが、VMT側が認識しない場合があります。
+   JoyConの電源オンオフを繰り返せば認識しますが、確実に認識させるなら、VMT側で"Add Compatible Controller On Startup" を OnにするとVMT起動時に仮想デバイスが登録されるため安定します。
+2. （ESP32起動したままの再接続がうまくいかない場合）JoyConのオンオフで認識しなくなった場合は、JoyConオフの状態でESP32を再起動してからJoyConオンにしてください。
 
 ## 注意事項
 1. Bluetooth Classic のホストとして機能する必要があるので ESP32(無印)である必要があります。<br>ESP32C3やESP32S3などの後継はBLE (Bluetooth Low Energy)しか対応していないため、使えません。
