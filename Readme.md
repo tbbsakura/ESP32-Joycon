@@ -6,7 +6,7 @@ PCにJoyConを接続すると毎回ペアリングからで面倒なので、PC�
 (JoyConへ Subcommand を送る機能はまだ不安定ですが、JoyCon から情報を取得する方は安定しています。)
 
 ## サンプルプログラム
-サンプルとして OSCで VRChat、あるいはVMT(Virtual Motion Tracker)が動いているPCにスティックやボタンの情報を送信して操作できるプログラム(src/main.cpp)をつけてあります。
+サンプルとして OSCで VRChat、あるいはVMT(Virtual Motion Tracker)が動いているPCにスティックやボタンの情報を送信して操作できるプログラム(src/main.cpp)をつけてあります。(両手やりたい場合はESP32が2つ必要です)
 VSCode の PlatformIO で Arduino ベースで書いていますので、src/settings.h の内容を編集して使ってください。
 ライブラリは platformio.ini の lib_depsに書いてあるものが必要です。
 
