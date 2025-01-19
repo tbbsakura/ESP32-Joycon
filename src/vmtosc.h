@@ -12,9 +12,9 @@ namespace VMTOSC {
   #define OSCPATH_VMT_STICK_CLICK "/VMT/Input/Joystick/Click"
 
   inline void SendVmtEnableOSC() {
-    OscWiFi.send(VMT_OSC_IPADDR, VMT_OSC_PORT, OSCPATH_VMT_ROOM_UNITY, VMT_INDEX, VMT_ENABLE, 0.0, 
-      0.0, 0.0, 0.0,        //position xyz
-      0.0, 0.0, 0.0, 1.0 ); //quaternion xyzw
+    OscWiFi.send(VMT_OSC_IPADDR, VMT_OSC_PORT, OSCPATH_VMT_ROOM_UNITY, VMT_INDEX, VMT_ENABLE, (float)0.0, 
+      (float)0.0, (float)0.0, (float)0.0,        //position xyz
+      (float)0.0, (float)0.0, (float)0.0, (float)1.0 ); //quaternion xyzw
         Serial.printf("[%s] called\n", __func__ );
 
   }
